@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "license": "MIT",
+    "repository": "https://github.com/avandesa/fuel-calc-app",
     "scripts": {
         "dev": "next dev",
         "build": "next build && next export"
