@@ -2,16 +2,16 @@ import React, { useState, ReactElement } from 'react';
 
 import LabelledInputRow from './LabelledInput';
 
-import calcRequiredFuel from '../lib/fuelCalc';
+import { calcFuelMetric } from '../lib/fuelCalc';
 
-export default function Calculator(): ReactElement {
+export default function MetricCalculator(): ReactElement {
     const [capacity, setCapactiy] = useState(70);
     const [buffer, setBuffer] = useState(1);
     const [fullBurnCons, setFullBurnCons] = useState(4.0);
     const [stintLength, setStintLength] = useState(20);
     const [fullBurnLaps, setFullBurnLaps] = useState(5);
 
-    const targetConsumption = calcRequiredFuel(
+    const targetConsumption = calcFuelMetric(
         capacity,
         stintLength,
         fullBurnLaps,
