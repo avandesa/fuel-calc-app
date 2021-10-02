@@ -1,46 +1,42 @@
-import { useEffect, ReactElement } from 'react';
-import { useLocation, useHistory } from 'react-router';
+import { ReactElement } from 'react';
+import { NavLink, Switch, Route } from 'react-router-dom';
 
 import MetricCalculator from './calculators/MetricCalculator';
 import ImperialCalculator from './calculators/ImperialCalculator';
 
 import './UnitSwitcher.css';
 
-const activeTabClass = `tab active`;
-const inactiveTabClass = `tab inactive`;
-
 export default function UnitSwitcher(): ReactElement {
-    const location = useLocation();
-    const history = useHistory();
-
-    useEffect(() => {
-        // Default to the metric calculator
-        if (location.hash !== '#metric' && location.hash !== '#imperial') {
-            history.replace('#metric');
-        }
-    }, [location.hash, history]);
-
-    const isMetric = location.hash === '#metric';
-
     return (
         <>
             <div className="container">
                 <div className="tabs">
-                    <button
-                        className={isMetric ? activeTabClass : inactiveTabClass}
-                        onClick={() => history.replace('#metric')}
+                    <NavLink
+                        to="/metric"
+                        replace
+                        className="tab"
+                        activeClassName="active"
                     >
                         Metric
-                    </button>
-                    <button
-                        className={isMetric ? inactiveTabClass : activeTabClass}
-                        onClick={() => history.replace('#imperial')}
+                    </NavLink>
+                    <NavLink
+                        to="/imperial"
+                        replace
+                        className="tab"
+                        activeClassName="active"
                     >
                         Imperial
-                    </button>
+                    </NavLink>
                 </div>
                 <div className="calc">
-                    {isMetric ? <MetricCalculator /> : <ImperialCalculator />}
+                    <Switch>
+                        <Route exact path="/metric">
+                            <MetricCalculator />
+                        </Route>
+                        <Route exact path="/imperial">
+                            <ImperialCalculator />
+                        </Route>
+                    </Switch>
                 </div>
             </div>
         </>
