@@ -5,7 +5,7 @@ import './labelled-input.css';
 export default function LabelledInputRow({
     label,
     value,
-    onChange,
+    onChange = () => void 0,
     id,
     min,
     max,
@@ -13,7 +13,7 @@ export default function LabelledInputRow({
 }: {
     label: string;
     value: number | string;
-    onChange: (newVal: number, event: React.ChangeEvent) => void;
+    onChange?: (newVal: number, event: React.ChangeEvent) => void;
     id: string;
     min?: number;
     max?: number;
