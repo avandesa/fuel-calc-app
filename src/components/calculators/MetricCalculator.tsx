@@ -1,8 +1,8 @@
 import { useState, ReactElement } from 'react';
 
-import LabelledInputRow from './LabelledInput';
+import LabelledInputRow from './input/LabelledInput';
 
-import { calcFuelMetric } from '../lib/fuelCalc';
+import { calcFuelMetric } from '../../lib/fuelCalc';
 
 export default function MetricCalculator(): ReactElement {
     const [capacity, setCapactiy] = useState(70);

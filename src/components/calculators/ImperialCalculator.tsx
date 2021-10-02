@@ -1,7 +1,7 @@
 import { useState, ReactElement } from 'react';
 
-import LabelledInputRow from './LabelledInput';
-import { calcFuelImperial } from '../lib/fuelCalc';
+import LabelledInputRow from './input/LabelledInput';
+import { calcFuelImperial } from '../../lib/fuelCalc';
 
 export default function ImperialCalculator(): ReactElement {
     const [capacity, setCapactiy] = useState(18.5);

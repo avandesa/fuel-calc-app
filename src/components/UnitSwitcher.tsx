@@ -1,7 +1,7 @@
 import { useState, ReactElement } from 'react';
 
-import MetricCalculator from './Metric Calculator';
-import ImperialCalculator from './ImperialCalculator';
+import MetricCalculator from './calculators/MetricCalculator';
+import ImperialCalculator from './calculators/ImperialCalculator';
 
 import './UnitSwitcher.css';
 
