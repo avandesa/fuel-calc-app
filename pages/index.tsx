@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import Image from 'next/image';
 
 import styles from '../styles/Home.module.css';
 
-import Calculator from '../components/Calculator';
+import UnitSwitcher from '../components/UnitSwitcher';
 
 export default function Home() {
     return (
@@ -14,7 +13,7 @@ export default function Home() {
 
             <main className={styles.main}>
                 <h1>Fuel Calculator</h1>
-                <Calculator />
+                <UnitSwitcher />
             </main>
 
             <footer className={styles.footer}>

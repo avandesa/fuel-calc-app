@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from '../styles/LabelledInput.module.css';
+
 export default function LabelledInputRow({
     label,
     value,
@@ -18,23 +20,19 @@ export default function LabelledInputRow({
     step?: number;
 }): JSX.Element {
     return (
-        <tr>
-            <td>
-                <label htmlFor={id}>{label}</label>
-            </td>
-            <td>
-                <input
-                    id={id}
-                    type="number"
-                    value={value}
-                    onChange={(event) => {
-                        onChange(Number(event.target.value), event);
-                    }}
-                    min={min}
-                    max={max}
-                    step={step}
-                />
-            </td>
-        </tr>
+        <div className={styles.row}>
+            <label htmlFor={id}>{label}</label>
+            <input
+                id={id}
+                type="number"
+                value={value}
+                onChange={(event) => {
+                    onChange(Number(event.target.value), event);
+                }}
+                min={min}
+                max={max}
+                step={step}
+            />
+        </div>
     );
 }
