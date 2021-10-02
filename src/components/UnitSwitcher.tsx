@@ -1,20 +1,20 @@
-import React, { useState, ReactElement } from 'react';
-
-import styles from '../styles/UnitSwitcher.module.css';
+import { useState, ReactElement } from 'react';
 
 import MetricCalculator from './Metric Calculator';
 import ImperialCalculator from './ImperialCalculator';
 
-const activeTabClass = `${styles.tab} ${styles.active}`;
-const inactiveTabClass = `${styles.tab} ${styles.inactive}`;
+import './UnitSwitcher.css';
+
+const activeTabClass = `tab active`;
+const inactiveTabClass = `tab inactive`;
 
 export default function UnitSwitcher(): ReactElement {
     const [isMetric, setIsMetric] = useState(true);
 
     return (
         <>
-            <div className={styles.container}>
-                <div className={styles.tabs}>
+            <div className="container">
+                <div className="tabs">
                     <button
                         className={isMetric ? activeTabClass : inactiveTabClass}
                         onClick={() => setIsMetric(true)}
@@ -28,7 +28,7 @@ export default function UnitSwitcher(): ReactElement {
                         Imperial
                     </button>
                 </div>
-                <div className={styles.calc}>
+                <div className="calc">
                     {isMetric ? <MetricCalculator /> : <ImperialCalculator />}
                 </div>
             </div>
