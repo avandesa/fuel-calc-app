@@ -1,20 +1,19 @@
-import React, { useState, ReactElement } from 'react';
+import { useState, ReactElement } from 'react';
 
 import LabelledInputRow from './LabelledInput';
-import { calcFuelImperial } from '../lib/fuelCalc';
 
-export default function ImperialCalculator(): ReactElement {
-    const [capacity, setCapactiy] = useState(18.5);
-    const [buffer, setBuffer] = useState(0.1);
+import { calcFuelMetric } from '../lib/fuelCalc';
+
+export default function MetricCalculator(): ReactElement {
+    const [capacity, setCapactiy] = useState(70);
+    const [buffer, setBuffer] = useState(1);
     const [fullBurnCons, setFullBurnCons] = useState(4.0);
     const [stintLength, setStintLength] = useState(20);
-    const [trackLength, setTrackLength] = useState(4);
     const [fullBurnLaps, setFullBurnLaps] = useState(5);
 
-    const targetConsumption = calcFuelImperial(
+    const targetConsumption = calcFuelMetric(
         capacity,
         stintLength,
-        trackLength,
         fullBurnLaps,
         fullBurnCons,
         buffer,
@@ -24,15 +23,15 @@ export default function ImperialCalculator(): ReactElement {
         <>
             <div>
                 <LabelledInputRow
-                    label="Fuel Capacity (gallons): "
+                    label="Fuel Capacity (liters): "
                     value={capacity}
                     onChange={setCapactiy}
                     id="fuel-capacity"
                     min={0}
-                    step={0.05}
+                    step={0.1}
                 />
                 <LabelledInputRow
-                    label="Fuel Buffer (gallons): "
+                    label="Fuel Buffer (liters): "
                     value={buffer}
                     onChange={setBuffer}
                     id="fuel-buffer"
@@ -40,7 +39,7 @@ export default function ImperialCalculator(): ReactElement {
                     step={0.05}
                 />
                 <LabelledInputRow
-                    label="'Full Burn' Consumption (mpg): "
+                    label="'Full Burn' Consumption (liters/lap): "
                     value={fullBurnCons}
                     onChange={setFullBurnCons}
                     id="full-burn-consumption"
@@ -48,15 +47,7 @@ export default function ImperialCalculator(): ReactElement {
                     step={0.01}
                 />
                 <LabelledInputRow
-                    label="Track Length (miles): "
-                    value={trackLength}
-                    onChange={setTrackLength}
-                    id="track-length"
-                    min={0.25}
-                    step={0.01}
-                />
-                <LabelledInputRow
-                    label="Stint Length (laps): "
+                    label="Stint Length: "
                     value={stintLength}
                     onChange={setStintLength}
                     id="target-laps"
@@ -81,9 +72,9 @@ export default function ImperialCalculator(): ReactElement {
                     textAlign: 'center',
                 }}
             >
-                You must run at {targetConsumption.toFixed(3)} miles per gallon
-                for {stintLength - fullBurnLaps} laps to be able to run at{' '}
-                {fullBurnCons} miles per gallon for {fullBurnLaps} laps.
+                You must burn {targetConsumption.toFixed(3)} liters/lap for{' '}
+                {stintLength - fullBurnLaps} laps to be able to burn{' '}
+                {fullBurnCons} liters/lap for {fullBurnLaps} laps.
             </div>
         </>
     );

@@ -1,22 +1,16 @@
-import Head from 'next/head';
+import UnitSwitcher from './components/UnitSwitcher';
 
-import styles from '../styles/Home.module.css';
+import './App.css';
 
-import UnitSwitcher from '../components/UnitSwitcher';
-
-export default function Home() {
+function App() {
     return (
-        <div className={styles.container}>
-            <Head>
-                <title>Fuel Calculator</title>
-            </Head>
-
-            <main className={styles.main}>
+        <div>
+            <main className="main">
                 <h1>Fuel Calculator</h1>
                 <UnitSwitcher />
             </main>
 
-            <footer className={styles.footer}>
+            <footer className="footer">
                 <a
                     href="https://github.com/avandesa/fuel-calc-app"
                     target="_blank"
@@ -38,3 +32,5 @@ export default function Home() {
         </div>
     );
 }
+
+export default App;
