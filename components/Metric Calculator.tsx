@@ -67,7 +67,13 @@ export default function MetricCalculator(): ReactElement {
                 </tbody>
             </table>
 
-            <div style={{ marginTop: '2rem' }}>
+            <div
+                style={{
+                    marginTop: '2rem',
+                    maxWidth: '30rem',
+                    textAlign: 'center',
+                }}
+            >
                 You must burn {targetConsumption.toFixed(3)} liters/lap for{' '}
                 {stintLength - fullBurnLaps} laps to be able to burn{' '}
                 {fullBurnCons} liters/lap for {fullBurnLaps} laps.

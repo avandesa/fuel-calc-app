@@ -49,13 +49,13 @@ export default function ImperialCalculator(): ReactElement {
                         step={0.01}
                     />
                     <LabelledInputRow
-                      label="Track Length (miles): "
-                      value={trackLength}
-                      onChange={setTrackLength}
-                      id="track-length"
-                      min={0.25}
-                      step={0.01}
-                     />
+                        label="Track Length (miles): "
+                        value={trackLength}
+                        onChange={setTrackLength}
+                        id="track-length"
+                        min={0.25}
+                        step={0.01}
+                    />
                     <LabelledInputRow
                         label="Stint Length (laps): "
                         value={stintLength}
@@ -76,9 +76,15 @@ export default function ImperialCalculator(): ReactElement {
                 </tbody>
             </table>
 
-            <div style={{ marginTop: '2rem' }}>
-                You must run at {targetConsumption.toFixed(3)} miles per gallon for{' '}
-                {stintLength - fullBurnLaps} laps to be able to run at{' '}
+            <div
+                style={{
+                    marginTop: '2rem',
+                    maxWidth: '30rem',
+                    textAlign: 'center',
+                }}
+            >
+                You must run at {targetConsumption.toFixed(3)} miles per gallon
+                for {stintLength - fullBurnLaps} laps to be able to run at{' '}
                 {fullBurnCons} miles per gallon for {fullBurnLaps} laps.
             </div>
         </>
