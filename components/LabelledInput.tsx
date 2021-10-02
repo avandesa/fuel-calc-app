@@ -20,23 +20,19 @@ export default function LabelledInputRow({
     step?: number;
 }): JSX.Element {
     return (
-        <tr className={styles.row}>
-            <td>
-                <label htmlFor={id}>{label}</label>
-            </td>
-            <td>
-                <input
-                    id={id}
-                    type="number"
-                    value={value}
-                    onChange={(event) => {
-                        onChange(Number(event.target.value), event);
-                    }}
-                    min={min}
-                    max={max}
-                    step={step}
-                />
-            </td>
-        </tr>
+        <div className={styles.row}>
+            <label htmlFor={id}>{label}</label>
+            <input
+                id={id}
+                type="number"
+                value={value}
+                onChange={(event) => {
+                    onChange(Number(event.target.value), event);
+                }}
+                min={min}
+                max={max}
+                step={step}
+            />
+        </div>
     );
 }

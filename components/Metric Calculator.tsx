@@ -21,51 +21,49 @@ export default function MetricCalculator(): ReactElement {
 
     return (
         <>
-            <table>
-                <tbody>
-                    <LabelledInputRow
-                        label="Fuel Capacity (liters): "
-                        value={capacity}
-                        onChange={setCapactiy}
-                        id="fuel-capacity"
-                        min={0}
-                        step={0.1}
-                    />
-                    <LabelledInputRow
-                        label="Fuel Buffer (liters): "
-                        value={buffer}
-                        onChange={setBuffer}
-                        id="fuel-buffer"
-                        min={0}
-                        step={0.05}
-                    />
-                    <LabelledInputRow
-                        label="'Full Burn' Consumption (liters/lap): "
-                        value={fullBurnCons}
-                        onChange={setFullBurnCons}
-                        id="full-burn-consumption"
-                        min={0}
-                        step={0.01}
-                    />
-                    <LabelledInputRow
-                        label="Stint Length: "
-                        value={stintLength}
-                        onChange={setStintLength}
-                        id="target-laps"
-                        min={0}
-                        step={1}
-                    />
-                    <LabelledInputRow
-                        label="Desired laps at 'full burn': "
-                        value={fullBurnLaps}
-                        onChange={setFullBurnLaps}
-                        id="full-burn-laps"
-                        min={0}
-                        max={stintLength}
-                        step={1}
-                    />
-                </tbody>
-            </table>
+            <div>
+                <LabelledInputRow
+                    label="Fuel Capacity (liters): "
+                    value={capacity}
+                    onChange={setCapactiy}
+                    id="fuel-capacity"
+                    min={0}
+                    step={0.1}
+                />
+                <LabelledInputRow
+                    label="Fuel Buffer (liters): "
+                    value={buffer}
+                    onChange={setBuffer}
+                    id="fuel-buffer"
+                    min={0}
+                    step={0.05}
+                />
+                <LabelledInputRow
+                    label="'Full Burn' Consumption (liters/lap): "
+                    value={fullBurnCons}
+                    onChange={setFullBurnCons}
+                    id="full-burn-consumption"
+                    min={0}
+                    step={0.01}
+                />
+                <LabelledInputRow
+                    label="Stint Length: "
+                    value={stintLength}
+                    onChange={setStintLength}
+                    id="target-laps"
+                    min={0}
+                    step={1}
+                />
+                <LabelledInputRow
+                    label="Desired laps at 'full burn': "
+                    value={fullBurnLaps}
+                    onChange={setFullBurnLaps}
+                    id="full-burn-laps"
+                    min={0}
+                    max={stintLength}
+                    step={1}
+                />
+            </div>
 
             <div
                 style={{

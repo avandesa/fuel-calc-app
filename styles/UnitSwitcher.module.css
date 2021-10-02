@@ -3,7 +3,7 @@
 
 .calc {
     display: block;
-    min-width: 30rem;
+    max-width: 35rem;
 }
 
 .tabs {

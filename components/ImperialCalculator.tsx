@@ -22,59 +22,57 @@ export default function ImperialCalculator(): ReactElement {
 
     return (
         <>
-            <table>
-                <tbody>
-                    <LabelledInputRow
-                        label="Fuel Capacity (gallons): "
-                        value={capacity}
-                        onChange={setCapactiy}
-                        id="fuel-capacity"
-                        min={0}
-                        step={0.05}
-                    />
-                    <LabelledInputRow
-                        label="Fuel Buffer (gallons): "
-                        value={buffer}
-                        onChange={setBuffer}
-                        id="fuel-buffer"
-                        min={0}
-                        step={0.05}
-                    />
-                    <LabelledInputRow
-                        label="'Full Burn' Consumption (miles per gallon): "
-                        value={fullBurnCons}
-                        onChange={setFullBurnCons}
-                        id="full-burn-consumption"
-                        min={0}
-                        step={0.01}
-                    />
-                    <LabelledInputRow
-                        label="Track Length (miles): "
-                        value={trackLength}
-                        onChange={setTrackLength}
-                        id="track-length"
-                        min={0.25}
-                        step={0.01}
-                    />
-                    <LabelledInputRow
-                        label="Stint Length (laps): "
-                        value={stintLength}
-                        onChange={setStintLength}
-                        id="target-laps"
-                        min={0}
-                        step={1}
-                    />
-                    <LabelledInputRow
-                        label="Desired laps at 'full burn': "
-                        value={fullBurnLaps}
-                        onChange={setFullBurnLaps}
-                        id="full-burn-laps"
-                        min={0}
-                        max={stintLength}
-                        step={1}
-                    />
-                </tbody>
-            </table>
+            <div>
+                <LabelledInputRow
+                    label="Fuel Capacity (gallons): "
+                    value={capacity}
+                    onChange={setCapactiy}
+                    id="fuel-capacity"
+                    min={0}
+                    step={0.05}
+                />
+                <LabelledInputRow
+                    label="Fuel Buffer (gallons): "
+                    value={buffer}
+                    onChange={setBuffer}
+                    id="fuel-buffer"
+                    min={0}
+                    step={0.05}
+                />
+                <LabelledInputRow
+                    label="'Full Burn' Consumption (mpg): "
+                    value={fullBurnCons}
+                    onChange={setFullBurnCons}
+                    id="full-burn-consumption"
+                    min={0}
+                    step={0.01}
+                />
+                <LabelledInputRow
+                    label="Track Length (miles): "
+                    value={trackLength}
+                    onChange={setTrackLength}
+                    id="track-length"
+                    min={0.25}
+                    step={0.01}
+                />
+                <LabelledInputRow
+                    label="Stint Length (laps): "
+                    value={stintLength}
+                    onChange={setStintLength}
+                    id="target-laps"
+                    min={0}
+                    step={1}
+                />
+                <LabelledInputRow
+                    label="Desired laps at 'full burn': "
+                    value={fullBurnLaps}
+                    onChange={setFullBurnLaps}
+                    id="full-burn-laps"
+                    min={0}
+                    max={stintLength}
+                    step={1}
+                />
+            </div>
 
             <div
                 style={{
